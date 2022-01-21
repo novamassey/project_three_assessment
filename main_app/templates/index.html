@@ -11,15 +11,38 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>Wacky Widgets</h1>
+  <h1>Wacky Widgets</h1>
+  <hr>
 
-    {% if widgets.count %}
-
-    {% else %}
-
+  {% if widget.count %}
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Quantity</th>
+          <th>Delete</th>
+          </tr>
+      </thead>
+      <tbody>
+    {% for w in widget %}
+        <tr>
+          <td>{{w.name}}</td>
+          <td>{{w.description}}</td>
+          <td>{{w.quantity}}</td>
+          <td>X</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+        
+        
+  {% else %}
+        
     <h3>No Widgets exist</h3>
-    <hr>
-
-    {% endif %}
+        <hr>
+  {% endif %}
+  
+      <a href="{% url 'add_widget' %}">Add Widget</a>
 </body>
 </html>

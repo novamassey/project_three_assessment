@@ -14,8 +14,11 @@
 
     <form action="" method="POST">
         {% csrf_token %}
-       
+       <h2> Do you want to delete your widget?</h2>
           <input type="submit" value="Yes - Delete!" >
-          <a href="% url 'index' %}">Cancel</a>
+          <a href="{% url 'index' %}">Cancel</a>
         </div> 
       </form>
+
+    </body>
+    </html>     

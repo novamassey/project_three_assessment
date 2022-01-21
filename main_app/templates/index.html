@@ -14,7 +14,7 @@
   <h1>Wacky Widgets</h1>
   <hr>
 
-  {% if widget.count %}
+  {% if widgets.count %}
     <table>
       <thead>
         <tr>
@@ -25,12 +25,12 @@
           </tr>
       </thead>
       <tbody>
-    {% for w in widget %}
+    {% for w in widgets %}
         <tr>
           <td>{{w.name}}</td>
           <td>{{w.description}}</td>
           <td>{{w.quantity}}</td>
-          <td>X</td>
+          <td><a href="{% url 'widget_delete' w.id %}">X</a></td>
         </tr>
         {% endfor %}
       </tbody>
@@ -42,7 +42,6 @@
     <h3>No Widgets exist</h3>
         <hr>
   {% endif %}
-  
-      <a href="{% url 'add_widget' %}">Add Widget</a>
+  <a href="{% url 'widget_create' %}">Create Widget</a> 
 </body>
 </html>

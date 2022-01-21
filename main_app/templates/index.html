@@ -12,5 +12,14 @@
 </head>
 <body>
     <h1>Wacky Widgets</h1>
+
+    {% if widgets.count %}
+
+    {% else %}
+
+    <h3>No Widgets exist</h3>
+    <hr>
+
+    {% endif %}
 </body>
 </html>
